@@ -1,0 +1,634 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.container1{
+    background-color:#D9D9D9;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 50px;
+    width: 90%;
+    border-width: 8px 3px 1px 5px;
+    border-color: #857575;
+    border-style: solid;
+}
+
+.image1{
+    background-image: url(../assets/images/ben30.jpg);
+    width: 60px;
+    aspect-ratio: 1/1;
+    background-position: center;
+    background-size: cover;
+    border-radius: 50%;
+
+}
+
+.image2{
+    background-image: url(../assets/images/cynthia.jpg);
+    width: 60px;
+    aspect-ratio: 1/1;
+    background-position: center;
+    background-size: cover;
+    border-radius: 50%;
+
+}
+
+.img-content {
+    display: flex;
+    flex-direction: row;
+}
+
+.btnn{
+    border-radius: 20px;
+    background-color: transparent;
+    border: solid 1px #D98E8E;
+    padding: 0px 10px ;
+    text-align: center;
+    height: 40px;
+
+}
+
+.container2{
+    /* width: 100%; */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+
+}
+
+.container3{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.container3 h1 span {
+    color: #e21919;
+}
+
+.image3{
+    background-image: url(../assets/images/surprised-male-student-designer-makes-sketches-spiral-notepad-wears-big-spectacles-has-stupefied-facial-expression-holds-pencil.jpg);
+    width: 320px;
+    height: 250px;
+    background-position: center;
+    background-size: cover;
+}
+
+.image4{
+    background-image: url(../assets/images/old-files.jpg);
+    width: 320px;
+    height: 250px;
+    background-position: center;
+    background-size: cover;
+    border: solid 1px #D9D9D9;
+}
+.conte{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+.conte2 {
+    display: grid;
+    /* grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); */
+    grid-template-columns: 1fr 1fr;
+
+}
+
+.container-center {
+
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    margin-top: 50px;
+}
+
+.containe {
+    background-color:#D9D9D9;
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 50px;
+    width: 70%;
+    border-width: 1px;
+    border-color: #857575;
+    border-style: solid;
+    margin-top: 50px;
+    height: 800px;
+    flex-direction: column;
+    border-radius: 15px;
+}
+
+.bordue {
+    text-align: center;
+
+}
+
+.image5 {
+    background-image: url(../assets/images/homme.webp);
+    width: 450px;
+    height: 550px;
+    /* aspect-ratio: 1/1; */
+    background-position: center;
+    background-size: cover;
+    border: solid 1px #D9D9D9;
+    background-size: cover;
+}
+
+.conte2 div h4 {
+    width: 400px;
+}
+
+.bordue h2 {
+    color: #e21919;
+}
+
+.image6 {
+
+    background-image: url(../assets/images/icons8-35-53.png);
+    width: 50px;
+    height: 50px;
+    background-position: center;
+    background-size: cover;
+    border: solid 1px #D9D9D9;
+    background-size: cover;
+    border-radius: 30px;
+}
+
+.image7 {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    background-image: url(../assets/images/stack-books-black-wooden-table.jpg);
+    width: 100%;
+    height: 550px;
+    background-position: center;
+    background-size: cover;
+    border: solid 1px #D9D9D9;
+    background-size: cover;
+    gap: 2rem;
+    padding: 5rem 30rem;
+}
+
+.conte3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.color1 {
+    background-color: #3C9978;
+    border-radius: 50px;
+    padding-top: 12px;
+    height: 60px;
+}
+
+.color2 {
+    background-color: #FE4B73;
+    border-radius: 50px;
+    padding-top: 12px;
+    height: 60px;
+
+}
+
+.color3 {
+    background-color: #000000;
+    border-radius: 50px;
+    padding-top: 12px;
+    height: 60px;
+}
+
+.color1 h4 {
+    color: #FFFFFF;
+    text-align: center;
+}
+
+.color2 h4 {
+    color: #FFFFFF;
+    text-align: center;
+}
+
+.color3 h4 {
+    color: #FFFFFF;
+    text-align: center;
+}
+.image8 {
+    background-image: url(../assets/images/thoughtful-man-working-writing.jpg);
+    width: 300px;
+    height: 400px;
+    background-position: center;
+    background-size: cover;
+    border: solid 1px #D9D9D9;
+    background-size: cover;
+    border-radius: 30px;
+}
+
+.image9 {
+    background-image: url(../assets/images/close-up-colorful-books-pile.jpg);
+    width: 300px;
+    height: 400px;
+    background-position: center;
+    background-size: cover;
+    border: solid 1px #D9D9D9;
+    background-size: cover;
+    border-radius: 30px;
+}
+
+.conte3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 200px;
+    /* background-color: #000000; */
+}
+.containe01 {
+    /* width: 100%; */
+    height: 500px;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    
+}
+
+.div-other {
+    background-color: #D9D9D9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    row-gap: 20px;
+    padding: 50px 0 50px 0;
+    margin: 50px 0 50px 0;
+
+}
+
+.color0 {
+    text-align: center;
+    color: #e21919;
+    font-size: 30px;
+}
+
+.barniere {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.barniere .image7 a {
+    text-decoration: none;
+    color: #FFFFFF;
+    font-size: 20px;
+}
+
+.barniere .image7 a:hover {
+    color: #f08630;
+}
+
+.txt-center {
+    text-align: center;
+}
+
+.txt-left {
+    text-align: left;
+}
+
+.txt-left .foot {
+    display: flex;
+    align-items: left;
+    gap: 10px;
+    width: 100%;
+    height: auto;
+}
+
+.txt-left .foot div {
+    /* width: auto; */
+    /* height: 40px; */
+    /* border-radius: 30px; */
+    /* background-color: #f8f8f8; */
+    /* border: 2px solid red; */
+}
+
+.txt-left .foot div i {
+    font-size: 30px;
+    color: #FFFFFF;
+}
+
+footer{
+
+    background-color: #9e9494;
+    width: 100%;
+    height: auto;
+    padding: 50px 50px 0 50px;
+    text-align: center;
+}
+
+.footer-grid {
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    width: 100%;
+    height: auto;
+}
+
+.image01 {
+    background-image: url(../assets/images/icons8-35-53.png);
+    width: 50px;
+    height: 50px;
+    background-position: center;
+    background-size: cover;
+    border: solid 1px #D9D9D9;
+    background-size: cover;
+    border-radius: 30px;
+}
+
+.footer-grid .barre {
+
+    border-right: 6px solid grey;
+    padding: 0 50px 0 50px;
+}
+
+.pad-grid {
+
+    padding: 0 50px 0 50px;
+}
+
+.footer-grid a {
+    text-decoration: none;
+    color: #333333;
+}
+
+.bar {
+    padding-top: 50px;
+    padding-bottom: 30px;
+}
+
+footer h5 {
+    color: rgb(212, 69, 69);
+    
+}
+
+.image10 {
+    background-image: url(../assets/images/surprised-young-afro-american-student-sitting-desk-with-school-tools-putting-hand-his-face-looking-pointing-side-isolated-pink-wall\ \(1\).jpg);
+    width: 100%;
+    height: 80%;
+    /* background-position: center; */
+    background-size: cover;
+    margin: 0 0 1000px 0 ;
+    
+}
+
+.image11 {
+
+    background-image: url(../assets/images/Capture\ d’écran\ 2024-09-03\ 094251.png);
+    width: 100%;
+    height: 1000px;
+    background-size: cover;
+
+}
+
+.d-grid {
+    background-color: #D9D9D9;
+    display: grid;
+    width: 400px;
+    height: 250px;
+    border-radius: 30px;
+    margin: 0 0 0 80px;
+}
+
+.brid{
+    padding: 200px 0 0 0;
+}
+
+.brid-br {
+
+    
+}
+
+.d-grid div h6 {
+    text-align: center;
+    color: black;
+    margin: 30px 0 0 0;
+}
+
+.centered-button .btnn{
+    border-radius: 20px;
+    background-color: transparent;
+    border: solid 1px #D98E8E;
+    text-align: center;
+    height: 40px;
+    margin: 0 0 0 150px;
+    /* padding: 0 20px; */
+}
+
+.centered-button .btnn:hover {
+    background-color: #D98E8E;
+    color: #FFFFFF;
+}
+
+.centered-button .btnn:active {
+    background-color: #D96868;
+}
+
+.centered-button .btnn:focus {
+    outline: none;
+}
+
+.centered-button {
+
+    padding: 110px 0 0 0;
+}
+
+.centa {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    display: flex;
+    background-color: #F8F8F8;
+
+
+}
+
+.bord {
+
+    padding: 80px;
+    background-color: #FFFFFF;
+    border-radius: 40px;
+    
+}
+
+.her{
+    background-color: red;
+    width: 100%;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+}
+
+section {
+    margin: 50px auto;
+    width: 60%;
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #333;
+}
+
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+    border-color: #007bff;
+    box-shadow: 0px 0px 8px rgba(0, 123, 255, 0.4);
+    outline: none;
+}
+
+button {
+    background-color: #FE4B73;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #FE4B73;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+.success-message {
+    color: green;
+    background-color: #d4edda;
+    border: 1px solid green;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.error-message {
+    color: red;
+    background-color: #f8d7da;
+    border: 1px solid red;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 20px;
+}
+
+.datatable-cover {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    text-align: center;
+    padding: 12px;
+}
+
+th {
+    background-color: #FE4B73;
+    color: white;
+    font-size: 14px;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+.icon-button {
+    padding: 8px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+.icon-button.primary {
+    background-color: #28a745;
+}
+
+.icon-button.primary:hover {
+    background-color: #218838;
+}
+
+.icon-button i {
+    font-size: 16px;
+}
+
+.bord {
+    margin-top: 50px;
+}
+
+.butone {
+
+    display: flex;
+    width: 100%;
+    justify-content: right;
+  }
+
+  .entete{
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+  }
