@@ -4,6 +4,7 @@ namespace App\Repositories;
 
 use App\Models\User;
 use App\Interface\AuthInterface;
+use Illuminate\Support\Facades\Hash;
 
 class AuthRepository implements AuthInterface
 {
@@ -19,7 +20,12 @@ class AuthRepository implements AuthInterface
 
     public function store(array $data)
     {
-        return User::create($data);
+        return User::create([
+            'name' => $data['name'],
+            'email' => $data['email'],
+            // 'password' =>  bcrypt($data['password']),
+            "password" => Hash::make($data['password'])
+        ]);
     }
 
     public function update(array $data, $id)

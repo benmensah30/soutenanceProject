@@ -11,6 +11,9 @@
 </head>
 
 <body>
+     @if (Auth::user()->isadmin === 1) 
+        @include('adminNavbar')
+     @else 
     <nav class="container text-center border-bottom border-black">
         <div class="row gap-2" style="height: 50px; margin-top: 20px;">
             <div class="col">
@@ -21,9 +24,10 @@
             <div class="col"><a class="nav-link active" href="">Cas d'eleves</a></div>
             <div class="col"><a class="nav-link active" href="">tâches</a></div>
             <div class="col"><a class="nav-link active" href="">connectez-vous</a></div>
-            <div class="col"><a class="nav-link active" href="{{ route('epreuves.create') }}">creation</a></div>
+           {{Auth::user()->name }};
         </div>
     </nav>
+    @endif 
     <div class="container-center">
         <div class="container1">
             <div class="container3">
@@ -90,7 +94,7 @@
                         Les Epréuves
                     </div>
                 </a>
-                
+
                 <div class="color2 txt-center">
                     <a href="">Quelques Qcm</>
                 </div>

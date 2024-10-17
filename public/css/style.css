@@ -632,3 +632,10 @@ tr:hover {
     justify-content: space-between;
     font-weight: bold;
   }
+
+  .text-center {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-between; */
+}

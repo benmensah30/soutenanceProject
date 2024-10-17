@@ -76,8 +76,15 @@ class EpreuveController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(string $epreuve_id)
     {
-        //
+        $epreuve = Epreuve::findOrFail($epreuve_id);
+    
+        
+        $epreuve::destroy($epreuve_id);
+        
+        
+        return redirect()->back();
+        
     }
 }

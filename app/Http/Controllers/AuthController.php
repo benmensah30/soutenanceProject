@@ -46,6 +46,30 @@ class AuthController extends Controller
         ]);
     }
 
+    public function login(Request $request)
+    {
+        // Valider les informations d'entrée
+        $request->validate([
+            'email' => 'required|email',
+            'password' => 'required',
+        ]);
+
+        // Tentative de connexion avec les informations d'authentification
+        if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
+            // Si la connexion réussit, redirige vers le tableau de bord
+            return redirect()->route('dashboard');
+        }
+
+        // Si la connexion échoue, renvoie à la page de login avec un message d'erreur
+        return redirect()->back()->withErrors(['email' => 'Identifiants incorrects']);
+    }
+
+     // Affiche le tableau de bord après la connexion
+     public function dashboard()
+     {
+         return view('dashboard');
+     }
+
     /**
      * Store a newly created resource in storage.
      */
@@ -54,7 +78,8 @@ class AuthController extends Controller
         $data = [
             "name" => $request->name,
             "email" => $request->email,
-            "password" => Hash::make($request->password)
+            "password" => $request->password,
+            // 'isadmin' => $request->isadmin
         ];
 
         DB::beginTransaction();
@@ -65,43 +90,52 @@ class AuthController extends Controller
 
             return ResponseClass::success();
         } catch (\Throwable $th) {
-            return ResponseClass::rollback();
+            return $th;
+            // return ResponseClass::rollback();
         }
 
     }
 
-    public function login(Request $request) {
+    // public function login(Request $request) {
 
-        $credentials = $request->only('email', 'password');
+    //     $credentials = $request->only('email', 'password');
 
-        $user = User::where("email", $request->email)->first();
+    //     $user = User::where("email", $request->email)->first();
 
-        if (!$user) {
-            return back()->withErrors([
-                'email' => 'Les informations d\'identification fournies sont incorrectes.',
-            ])->onlyInput('email');
-        }
+    //     if (!$user) {
+    //         return back()->withErrors([
+    //             'email' => 'Les informations d\'identification fournies sont incorrectes.',
+    //         ])->onlyInput('email');
+    //     }
 
-        try {
-            if (Hash::check($request->password, $user->password)) {
-                $request->session()->put("user_id", $user->id);
-                return redirect()->intended('dashboard');
-            }else {
-                return back()->withErrors([
-                    'email' => 'Les informations d\'identification fournies sont incorrectes.',
-                ])->onlyInput('email');
-            }
-        } catch (\Throwable $th) {
-            return back()->withErrors([
-                'email' => 'Les informations d\'identification fournies sont incorrectes.',
-            ])->onlyInput('email');
-        }
+    //     try {
+    //         if (Hash::check($request->password, $user->password)) {
+    //             // $request->session()->put("user_id", $user->id);
 
+    //             return redirect()->route('dashboard');
+    //             // return redirect()->intended('dashboard');
+    //         }else {
+    //             return back()->withErrors([
+    //                 'email' => 'Les informations d\'identification fournies sont incorrectes.',
+    //             ])->onlyInput('email');
+    //         }
+    //     } catch (\Throwable $th) {
+    //         return back()->withErrors([
+    //             'email' => 'Les informations d\'identification fournies sont incorrectes.',
+    //         ])->onlyInput('email');
+    //     }
+
+    // }
+
+    public function logout(Request $request) {
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        return redirect()->route('login');
     }
 
-    public function logout() {
-        session()->forget("user_id");
-        return redirect()->route('authentication');
+    public function shoWLogin() {
+        return view('auth');
     }
 
     /**

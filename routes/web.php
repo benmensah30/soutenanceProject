@@ -13,18 +13,26 @@ Route::post('/otp-code', [AuthController::class, 'checkOtpCode'])->name('checkOt
 
 
 Route::post('/login', [AuthController::class, 'login'])->name('login');
-Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
+Route::get('/login', [AuthController::class, 'shoWLogin'])->name('login');
 
-Route::get('/dashboard', [AuthController::class, 'pages'])->name('dashboard');
+Route::middleware(['auth'])->group(function () {
 
-Route::resource('/auth', AuthController::class);
-Route::resource('/epreuves', EpreuveController::class);
+    Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
+    
+    // Route::middleware(['isadmin'])->group(function () {
+
+        Route::resource('/epreuves', EpreuveController::class);
+    // });
+    Route::get('/dashboard', [AuthController::class, 'pages'])->name('dashboard');
+    
+    Route::resource('/auth', AuthController::class);
+    Route::get('/pdf_epreuves/{epreuve_id}/pdf', [PdfController::class, 'downloadPDF'])->name('pdf_epreuves.pdf');
+    
+    Route::get('/pdf_epreuves/{epreuve_id}', [PdfController::class, 'show'])->name('pdf_epreuves.show');
+});
 
 
 
 
 
 
-Route::get('/pdf_epreuves/{epreuve_id}/pdf', [PdfController::class, 'downloadPDF'])->name('pdf_epreuves.pdf');
-
-Route::get('/pdf_epreuves/{epreuve_id}', [PdfController::class, 'show'])->name('pdf_epreuves.show');
