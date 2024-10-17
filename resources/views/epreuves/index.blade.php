@@ -18,7 +18,7 @@
         </div>
         <div class="col"><a class="nav-link active" href="">connessance c++</a></div>
         <div class="col"><a class="nav-link active" href="{{ route('dashboard') }}">Aceuil</a></div>
-        <div class="col"><a class="nav-link active" href="">profil</a></div>
+        <div class="col"><a class="nav-link active" href="{{ route('profile.edit') }}">profil</a></div>
         <div class="col"><a class="nav-link active" href="{{ route('epreuves.index') }}">Epreuves</a></div>
         <div class="col"><a class="nav-link active" href="{{ route('logout') }}">Deconnexion</a></div>
     </div>

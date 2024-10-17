@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\EpreuveController;
 use App\Http\Controllers\PdfController;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -20,7 +21,9 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
     
     // Route::middleware(['isadmin'])->group(function () {
-
+        Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+        Route::put('/profile', [ProfileController::class, 'update'])->name('profile.update');
+        
         Route::resource('/epreuves', EpreuveController::class);
     // });
     Route::get('/dashboard', [AuthController::class, 'pages'])->name('dashboard');

@@ -3,9 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\createEpreuveRequest;
+use App\Mail\Notifications;
 use App\Models\Epreuve;
+use App\Models\User;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class EpreuveController extends Controller
 {
@@ -44,6 +47,22 @@ class EpreuveController extends Controller
 
         // Sauvegardez l'instance dans la base de données
         $epreuve->save();
+
+        $epreuveDetails = [
+            'classe' => $epreuve->classe,
+           'matiere' => $epreuve->matiere,
+        ];
+
+         // Récupérer tous les utilisateurs
+    $users = User::all();
+
+    // Envoyer la notification à tous les utilisateurs
+    foreach ($users as $user) {
+        Mail::to($user['email'])->send(new Notifications(
+            $epreuveDetails['classe'],
+            $epreuveDetails['matiere'],
+        ));
+    }
 
         // Vous pouvez rediriger ou retourner une réponse selon vos besoins
         return redirect()->route('epreuves.index')->with('success', 'Resource created successfully.');
